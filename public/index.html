@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3g0qO751SYBhUV9kRN7dyIWGt0t91F0i650gBqeIs6G8BZ1X7pD7PnVfgzYVdluglf0XY99723409/1O6MsvZ8+HEftCah65yW5u5bSeP0124DwH0rG/k383Vq19623MJu66954540"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 style="font-size: x-large; font-weight: 800;    margin: 40px 70px;
+    background-color: aliceblue;">أضافة او تعديل منتج </h1>
+
+
+    <form id="productForm" class="container mt-4">
+        <!-- Product Name Field -->
+        <div class="mb-3">
+            <label for="name" class="form-label">
+                <i class="far fa-file-alt"></i> اسم المننج
+            </label>
+            <input name="name" id="name" type="text" class="form-control" placeholder="ادخل اسم المنتج" required>
+        </div>
+
+        <!-- Description Field -->
+        <div class="mb-3">
+            <label for="description" class="form-label">
+                <i class="far fa-file-alt"></i> الوصف
+            </label>
+            <input name="description" id="description" type="text" class="form-control"
+                placeholder="ادخل الوصف الاساسي للمنتج" required>
+        </div>
+
+        <!-- Description2 Field -->
+        <div class="mb-3">
+            <label for="description2" class="form-label">
+                <i class="far fa-file-alt"></i> وصف المنتج في اسطر منفصله
+            </label>
+            <input name="description2" id="description2" type="text" class="form-control"
+                placeholder="افصل بين الاسطر بعلامة الفصله (,)" required>
+        </div>
+
+        <!-- Related Products Field -->
+        <div class="mb-3">
+            <label for="relatedproducts" class="form-label">
+                <i class="far fa-file-alt"></i> Related Products
+            </label>
+            <input name="relatedproducts" id="relatedproducts" type="text" class="form-control"
+                placeholder="ادخل ال ID الخاص بالمنتجات مفصولة بعلامة (,)" required>
+        </div>
+
+        <!-- Price Field -->
+        <div class="mb-3">
+            <label for="price" class="form-label">
+                <i class="fas fa-dollar-sign"></i> السعر
+            </label>
+            <input name="price" id="price" type="number" class="form-control"
+                placeholder="أدخل السعر بالارقام فقط وسيتم اضافة (ج.م) تلقائيا" required>
+        </div>
+
+        <!-- Image URL 1 Field -->
+        <div class="mb-3">
+            <label for="imageurl1" class="form-label">
+                <i class="far fa-image"></i> الصورة الاول (الاساسية)
+            </label>
+            <input name="imageurl1" id="imageurl1" type="text" class="form-control"
+                placeholder="أدخل عنوان الرابط الخاص بالصورة اذا توفر ">
+            <input name="imagepath1" id="imagepath1" type="file" class="form-control mt-2"
+                placeholder="او يمكنك تحديد صورة من الجهاز الخاص بك">
+            <img id="preview1" class="mt-2" width="50">
+        </div>
+
+        <!-- Image URL 2 Field -->
+        <div class="mb-3">
+            <label for="imageurl2" class="form-label">
+                <i class="far fa-image"></i> الصورة الثانيه
+            </label>
+            <input name="imageurl2" id="imageurl2" type="text" class="form-control" placeholder="أدخل الصورة الثانيه">
+            <input name="imagepath2" id="imagepath2" type="file" class="form-control mt-2"
+                placeholder="او يمكنك تحديد صورة من الجهاز الخاص بك">
+            <img id="preview2" class="mt-2" width="50">
+        </div>
+
+        <!-- Image URL 3 Field -->
+        <div class="mb-3">
+            <label for="imageurl3" class="form-label">
+                <i class="far fa-image"></i> الصورة الثالثه
+            </label>
+            <input name="imageurl3" id="imageurl3" type="text" class="form-control" placeholder="Enter image URL 3">
+            <input name="imagepath3" id="imagepath3" type="file" class="form-control mt-2"
+                placeholder="او يمكنك تحديد صورة من الجهاز الخاص بك">
+            <img id="preview3" class="mt-2" width="50">
+        </div>
+
+        <!-- Image URL 4 Field -->
+        <div class="mb-3">
+            <label for="imageurl4" class="form-label">
+                <i class="far fa-image"></i> الصورة الرابعه
+            </label>
+            <input name="imageurl4" id="imageurl4" type="text" class="form-control" placeholder="Enter image URL 4">
+            <input name="imagepath4" id="imagepath4" type="file" class="form-control mt-2"
+                placeholder="او يمكنك تحديد صورة من الجهاز الخاص بك">
+            <img id="preview4" class="mt-2" width="50">
+        </div>
+
+        <!--hidden-->
+        <!-- Image URL 5 Field -->
+        <div class="mb-3">
+            <label for="imageurl5" class="form-label">
+                <i class="far fa-image"></i> Image URL 5
+            </label>
+            <input name="imageurl5" id="imageurl5" type="text" class="form-control" placeholder="Enter image URL 5">
+            <input name="imagepath5" id="imagepath5" type="file" class="form-control mt-2">
+            <img id="preview5" class="mt-2" width="50">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="button" class="btn btn-primary" onclick="addProduct()"
+            style="margin-top: 5px; margin-bottom: 5px;">اضافة المنتج</button>
+        <button type="button" class="btn btn-success" id="saveChangesButton"
+            style="margin-top: 5px; margin-bottom: 5px;">رفع التعديلات الي السيرفر</button>
+    </form>
+
+
+    <br>
+    <h1 style="font-size: x-large; font-weight: 800;    margin: 40px 70px;
+    background-color: aliceblue;">جميع المنتجات </h1>
+    <br>
+    <div id="productTableContainer"></div>
+
+
+
+    <script src="site.js" type="module"></script>
+
+
+     <!--Hosting on firebase-->
+     <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDFCdIC90J7Xt7g4PnGvGxMIsryXSYNUZU",
+          authDomain: "e-commerce-f1c8f.firebaseapp.com",
+          projectId: "e-commerce-f1c8f",
+          storageBucket: "e-commerce-f1c8f.appspot.com",
+          messagingSenderId: "478625833057",
+          appId: "1:478625833057:web:2dae2d526bac5a8bd58a20",
+          measurementId: "G-6VXRB6TVXX"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+
+</html>
